@@ -63,7 +63,7 @@ def build_lists():
 		pair = input("Exam points and exercises completed: ")
 		if pair != "":
 			data = pair.split()
-			current_score = scores.append(points(int(data[0]), int(data[1])))
+			scores.append(points(int(data[0]), int(data[1])))
 			grades.append(grade(points(int(data[0]), int(data[1])), int(data[0]) < 10))
 		else:
 			break
