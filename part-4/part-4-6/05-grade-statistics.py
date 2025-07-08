@@ -64,10 +64,7 @@ def build_lists():
 		if pair != "":
 			data = pair.split()
 			current_score = scores.append(points(int(data[0]), int(data[1])))
-			if int(data[0]) < 10:
-				grades.append(0)
-			else:
-				grades.append(grade(points(int(data[0]), int(data[1])), False))
+			grades.append(grade(points(int(data[0]), int(data[1])), int(data[0]) < 10))
 		else:
 			break
 	print_stats(scores, grades)
