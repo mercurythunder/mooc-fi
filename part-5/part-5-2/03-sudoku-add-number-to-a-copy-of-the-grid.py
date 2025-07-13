@@ -1,3 +1,14 @@
+def copy_and_add(sudoku: list, row_no: int, column_no: int, number: int):
+	horizontal = len(sudoku)
+	vertical = len(sudoku[0])
+	newsudoku = [row[:] for row in sudoku]
+	for i in range(0, horizontal):
+		for j in range(0, vertical):
+			newsudoku[i][j] = sudoku[i][j]
+			if i == row_no and j == column_no:
+				newsudoku[row_no][column_no] = number
+	return newsudoku
+
 def print_sudoku(sudoku: list):
 	printable = ""
 	horizontal = len(sudoku)
@@ -18,9 +29,6 @@ def print_sudoku(sudoku: list):
 				printable += " "
 	print(printable)
 
-def add_number(sudoku: list, row_no: int, column_no: int, number:int):
-	sudoku[row_no][column_no] = number 
-
 if __name__ == "__main__":
 	sudoku  = [
 	[0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -34,11 +42,9 @@ if __name__ == "__main__":
 	[0, 0, 0, 0, 0, 0, 0, 0, 0]
 	]
 
+	grid_copy = copy_and_add(sudoku, 0, 0, 2)
+	print("Original:")
 	print_sudoku(sudoku)
-	add_number(sudoku, 0, 0, 2)
-	add_number(sudoku, 1, 2, 7)
-	add_number(sudoku, 5, 7, 3)
 	print()
-	print("Three numbers added:")
-	print()
-	print_sudoku(sudoku)
+	print("Copy:")
+	print_sudoku(grid_copy)
