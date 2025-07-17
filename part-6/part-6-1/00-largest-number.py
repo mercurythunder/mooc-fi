@@ -1,8 +1,9 @@
 import sys
 
 def largest():
+	filename = "numbers.txt"
 	largest = - (sys.maxsize * 2)
-	with open("numbers.txt") as file:
+	with open(filename) as file:
 		for line in file:
 			number = int(line)
 			if number > largest:
