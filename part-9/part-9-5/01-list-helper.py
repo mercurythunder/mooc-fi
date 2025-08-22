@@ -1,5 +1,6 @@
 class ListHelper:
-	def greatest_frequency(my_list: list):
+	@classmethod
+	def greatest_frequency(cls, my_list: list):
 		instances = dict()
 		for item in my_list:
 			if item in instances:
@@ -14,7 +15,8 @@ class ListHelper:
 				most_frequent_item = instance
 		return most_frequent_item
 	
-	def doubles(my_list: list):
+	@classmethod
+	def doubles(cls, my_list: list):
 		instances = dict()
 		items_doubled = 0
 		for item in my_list:
