@@ -6,7 +6,7 @@ class SuperHero:
 	def __str__(self):
 		return f'{self.name}, superpowers: {self.superpowers}'
 
-class SuperGroup():
+class SuperGroup:
 	def __init__(self, name: str, location: str):
 		self._name = name
 		self._location = location
